@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HiLife | Employee Directory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Page Header -->
+    <div class="header">
+      <h1>🏥 HiLife Employee Directory</h1>
+      <p>Search and filter employees easily</p>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-box">
+
+      <div class="filter-group">
+        <label for="searchName">Search by Name / ID</label>
+        <input type="text" id="searchName" placeholder="e.g. John or EMP001" />
+      </div>
+
+      <div class="filter-group">
+        <label for="filterDept">Filter by Department</label>
+        <select id="filterDept">
+          <option value="">All Departments</option>
+          <option value="Cardiology">Cardiology</option>
+          <option value="Neurology">Neurology</option>
+          <option value="Pediatrics">Pediatrics</option>
+          <option value="Radiology">Radiology</option>
+          <option value="HR">HR</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterDOB">Filter by Date of Birth</label>
+        <input type="date" id="filterDOB" />
+      </div>
+
+      <div class="filter-group">
+        <label for="filterGender">Filter by Gender</label>
+        <select id="filterGender">
+          <option value="">All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <button id="clearBtn">✖ Clear Filters</button>
+      </div>
+
+    </div>
+
+    <!-- Result Count -->
+    <div class="result-info">
+      Showing <span id="resultCount">0</span> employee(s)
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Rows will be inserted by JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- No results message -->
+      <div id="noResult" class="no-result hidden">
+        😕 No employees found matching your filters.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

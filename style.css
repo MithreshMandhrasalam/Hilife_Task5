@@ -1,0 +1,234 @@
+/* ===========================
+   Global Reset & Font
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* ===========================
+   Header
+=========================== */
+.header {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
+  text-align: center;
+  padding: 36px 20px 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+/* ===========================
+   Filter Box
+=========================== */
+.filter-box {
+  background: white;
+  margin: 28px auto;
+  padding: 24px 28px;
+  border-radius: 14px;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 10px 12px;
+  border: 1.8px solid #d0d7e3;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+  background: white;
+}
+
+/* Clear Button */
+#clearBtn {
+  padding: 10px 20px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#clearBtn:hover {
+  background: #e03535;
+  transform: scale(1.03);
+}
+
+#clearBtn:active {
+  transform: scale(0.98);
+}
+
+/* ===========================
+   Result Count
+=========================== */
+.result-info {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.result-info span {
+  font-weight: 700;
+  color: #1a73e8;
+  font-size: 16px;
+}
+
+/* ===========================
+   Table Wrapper
+=========================== */
+.table-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   Table Styles
+=========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead tr {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
+}
+
+thead th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eef1f6;
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: #f0f6ff;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 13px 16px;
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+}
+
+/* Status Badge */
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.badge.active {
+  background: #e6f9ee;
+  color: #1a9e5a;
+}
+
+.badge.inactive {
+  background: #fdecea;
+  color: #d32f2f;
+}
+
+/* ===========================
+   No Result Message
+=========================== */
+.no-result {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  font-size: 16px;
+  color: #888;
+  border-top: 1px solid #eee;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .filter-box {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+}
