@@ -179,6 +179,11 @@ tbody td {
   color: #d32f2f;
 }
 
+.badge.on-leave {
+  background: #fff8e1;
+  color: #ffb300;
+}
+
 .no-result {
   text-align: center;
   padding: 40px;

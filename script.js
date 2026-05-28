@@ -1,102 +1,102 @@
 var employees = [
   {
-    id: "EMP001",
-    name: "John Smith",
-    dob: "1990-03-15",
+    id: "EMP101",
+    name: "Arun Kumar",
+    dob: "1999-02-15",
     gender: "Male",
-    department: "Cardiology",
-    role: "Senior Doctor",
-    email: "john.smith@hilife.com",
+    department: "IT",
+    role: "Developer",
+    email: "arun.kumar@example.com",
     status: "Active"
   },
   {
-    id: "EMP002",
-    name: "Priya Sharma",
-    dob: "1995-07-22",
+    id: "EMP102",
+    name: "Priya S",
+    dob: "1998-07-22",
     gender: "Female",
-    department: "Neurology",
-    role: "Nurse",
-    email: "priya.sharma@hilife.com",
+    department: "HR",
+    role: "HR Executive",
+    email: "priya.s@example.com",
     status: "Active"
   },
   {
-    id: "EMP003",
-    name: "David Lee",
-    dob: "1988-11-05",
+    id: "EMP103",
+    name: "Karthik R",
+    dob: "1997-11-10",
     gender: "Male",
-    department: "Radiology",
-    role: "Radiologist",
-    email: "david.lee@hilife.com",
+    department: "Finance",
+    role: "Accountant",
+    email: "karthik.r@example.com",
+    status: "Active"
+  },
+  {
+    id: "EMP104",
+    name: "Divya M",
+    dob: "2000-04-03",
+    gender: "Female",
+    department: "Marketing",
+    role: "Marketing Executive",
+    email: "divya.m@example.com",
+    status: "Active"
+  },
+  {
+    id: "EMP105",
+    name: "Surya P",
+    dob: "1996-09-18",
+    gender: "Male",
+    department: "Support",
+    role: "System Admin",
+    email: "surya.p@example.com",
     status: "Inactive"
   },
   {
-    id: "EMP004",
-    name: "Ananya Patel",
-    dob: "1993-01-30",
+    id: "EMP106",
+    name: "Keerthi V",
+    dob: "1999-01-27",
     gender: "Female",
-    department: "Pediatrics",
-    role: "Pediatrician",
-    email: "ananya.patel@hilife.com",
+    department: "Operations",
+    role: "Coordinator",
+    email: "keerthi.v@example.com",
     status: "Active"
   },
   {
-    id: "EMP005",
-    name: "Michael Brown",
-    dob: "1985-06-18",
+    id: "EMP107",
+    name: "Vignesh K",
+    dob: "1998-06-05",
     gender: "Male",
-    department: "HR",
-    role: "HR Manager",
-    email: "michael.brown@hilife.com",
+    department: "Security",
+    role: "Analyst",
+    email: "vignesh.k@example.com",
     status: "Active"
   },
   {
-    id: "EMP006",
-    name: "Sara Wilson",
-    dob: "1998-09-09",
+    id: "EMP108",
+    name: "Nisha T",
+    dob: "2001-12-14",
     gender: "Female",
-    department: "Cardiology",
-    role: "Cardiologist",
-    email: "sara.wilson@hilife.com",
+    department: "Data Science",
+    role: "Data Analyst",
+    email: "nisha.t@example.com",
     status: "Active"
   },
   {
-    id: "EMP007",
-    name: "Rajan Mehta",
-    dob: "1991-12-25",
+    id: "EMP109",
+    name: "Hari B",
+    dob: "1997-08-29",
     gender: "Male",
-    department: "Neurology",
-    role: "Neurologist",
-    email: "rajan.mehta@hilife.com",
-    status: "Inactive"
+    department: "Product",
+    role: "Product Associate",
+    email: "hari.b@example.com",
+    status: "On Leave"
   },
   {
-    id: "EMP008",
-    name: "Kavya Nair",
-    dob: "1996-04-14",
+    id: "EMP110",
+    name: "Aishwarya R",
+    dob: "2000-03-11",
     gender: "Female",
-    department: "HR",
-    role: "Recruiter",
-    email: "kavya.nair@hilife.com",
-    status: "Active"
-  },
-  {
-    id: "EMP009",
-    name: "Thomas George",
-    dob: "1983-08-02",
-    gender: "Male",
-    department: "Pediatrics",
-    role: "Senior Nurse",
-    email: "thomas.george@hilife.com",
-    status: "Active"
-  },
-  {
-    id: "EMP010",
-    name: "Divya Reddy",
-    dob: "1994-02-20",
-    gender: "Female",
-    department: "Radiology",
-    role: "Lab Technician",
-    email: "divya.reddy@hilife.com",
+    department: "Customer Support",
+    role: "Support Executive",
+    email: "aishwarya.r@example.com",
     status: "Active"
   }
 ];
@@ -117,16 +117,22 @@ function buildTableRows(employeeList) {
   for (var i = 0; i < employeeList.length; i++) {
     var emp = employeeList[i];
     var age = calculateAge(emp.dob);
+    var parts = emp.dob.split("-");
+    var formattedDOB = parts[2] + "-" + parts[1] + "-" + parts[0];
     var badgeClass = "";
     if (emp.status === "Active") {
       badgeClass = "badge active";
-    } else {
+    } else if (emp.status === "Inactive") {
       badgeClass = "badge inactive";
+    } else if (emp.status === "On Leave") {
+      badgeClass = "badge on-leave";
+    } else {
+      badgeClass = "badge";
     }
     html += "<tr>" +
       "<td>" + emp.id + "</td>" +
       "<td>" + emp.name + "</td>" +
-      "<td>" + emp.dob + "</td>" +
+      "<td>" + formattedDOB + "</td>" +
       "<td>" + age + "</td>" +
       "<td>" + emp.gender + "</td>" +
       "<td>" + emp.department + "</td>" +
