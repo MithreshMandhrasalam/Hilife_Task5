@@ -165,6 +165,7 @@ function applyFilters() {
   var selectedDept = document.getElementById("filterDept").value;
   var selectedDOB = document.getElementById("filterDOB").value;
   var selectedGender = document.getElementById("filterGender").value;
+  var selectedStatus = document.getElementById("filterStatus").value;
 
   var filtered = [];
   for (var i = 0; i < employees.length; i++) {
@@ -190,7 +191,12 @@ function applyFilters() {
       matchGender = true;
     }
 
-    if (matchName && matchDept && matchDOB && matchGender) {
+    var matchStatus = false;
+    if (selectedStatus === "" || emp.status === selectedStatus) {
+      matchStatus = true;
+    }
+
+    if (matchName && matchDept && matchDOB && matchGender && matchStatus) {
       filtered.push(emp);
     }
   }
@@ -203,6 +209,7 @@ function clearFilters() {
   document.getElementById("filterDept").value = "";
   document.getElementById("filterDOB").value = "";
   document.getElementById("filterGender").value = "";
+  document.getElementById("filterStatus").value = "";
   showTable(employees);
 }
 
@@ -210,6 +217,7 @@ document.getElementById("searchName").addEventListener("input", applyFilters);
 document.getElementById("filterDept").addEventListener("change", applyFilters);
 document.getElementById("filterDOB").addEventListener("change", applyFilters);
 document.getElementById("filterGender").addEventListener("change", applyFilters);
+document.getElementById("filterStatus").addEventListener("change", applyFilters);
 document.getElementById("clearBtn").addEventListener("click", clearFilters);
 
 showTable(employees);
