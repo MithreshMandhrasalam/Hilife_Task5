@@ -1,7 +1,7 @@
 var employees = [
   {
     id: "EMP101",
-    name: "Arun Kumar",
+    name: "Arun",
     dob: "1999-02-15",
     gender: "Male",
     department: "Software Development",
@@ -11,7 +11,7 @@ var employees = [
   },
   {
     id: "EMP102",
-    name: "Priya Nair",
+    name: "Priya",
     dob: "1998-07-22",
     gender: "Female",
     department: "Web Development",
@@ -21,7 +21,7 @@ var employees = [
   },
   {
     id: "EMP103",
-    name: "Karthik Raj",
+    name: "Karthik",
     dob: "1997-11-10",
     gender: "Male",
     department: "Cyber Security",
@@ -31,7 +31,7 @@ var employees = [
   },
   {
     id: "EMP104",
-    name: "Divya Mani",
+    name: "Divya",
     dob: "2000-04-03",
     gender: "Female",
     department: "Data Science",
@@ -41,7 +41,7 @@ var employees = [
   },
   {
     id: "EMP105",
-    name: "Surya Prakash",
+    name: "Surya",
     dob: "1996-09-18",
     gender: "Male",
     department: "Cloud Computing",
@@ -51,7 +51,7 @@ var employees = [
   },
   {
     id: "EMP106",
-    name: "Keerthi Varun",
+    name: "Keerthi",
     dob: "1999-01-27",
     gender: "Female",
     department: "Artificial Intelligence",
@@ -61,7 +61,7 @@ var employees = [
   },
   {
     id: "EMP107",
-    name: "Vignesh Kumar",
+    name: "Vignesh",
     dob: "1998-06-05",
     gender: "Male",
     department: "IT Support",
@@ -71,7 +71,7 @@ var employees = [
   },
   {
     id: "EMP108",
-    name: "Nisha Tamil",
+    name: "Nisha",
     dob: "2001-12-14",
     gender: "Female",
     department: "Mobile App Development",
@@ -81,7 +81,7 @@ var employees = [
   },
   {
     id: "EMP109",
-    name: "Hari Balan",
+    name: "Hari",
     dob: "1997-08-29",
     gender: "Male",
     department: "DevOps",
@@ -91,7 +91,7 @@ var employees = [
   },
   {
     id: "EMP110",
-    name: "Aishwarya Devi",
+    name: "Aishwarya",
     dob: "2000-03-11",
     gender: "Female",
     department: "Database Management",
@@ -139,7 +139,7 @@ function buildTableRows(employeeList) {
       "<td>" + emp.role + "</td>" +
       "<td>" + emp.email + "</td>" +
       "<td><span class='" + badgeClass + "'>" + emp.status + "</span></td>" +
-    "</tr>";
+      "</tr>";
   }
   return html;
 }
