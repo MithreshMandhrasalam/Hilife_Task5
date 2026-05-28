@@ -47,7 +47,7 @@ var employees = [
     department: "Cloud Computing",
     role: "Cloud Engineer",
     email: "suryaprakash@example.com",
-    status: "Absent"
+    status: "On Permission"
   },
   {
     id: "EMP106",
@@ -122,8 +122,8 @@ function buildTableRows(employeeList) {
     var badgeClass = "";
     if (emp.status === "Present") {
       badgeClass = "badge active";
-    } else if (emp.status === "Absent") {
-      badgeClass = "badge inactive";
+    } else if (emp.status === "On Permission") {
+      badgeClass = "badge on-permission";
     } else if (emp.status === "On Leave") {
       badgeClass = "badge on-leave";
     } else {

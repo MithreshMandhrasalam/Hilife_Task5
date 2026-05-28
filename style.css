@@ -185,6 +185,11 @@ tbody td {
   color: #ffb300;
 }
 
+.badge.on-permission {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
 .no-result {
   text-align: center;
   padding: 40px;
