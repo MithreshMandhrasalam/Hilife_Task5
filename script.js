@@ -6,7 +6,7 @@ var employees = [
     gender: "Male",
     department: "Software Development",
     role: "Frontend Developer",
-    email: "arunkumar@example.com",
+    email: "arun@example.com",
     status: "Present"
   },
   {
@@ -16,7 +16,7 @@ var employees = [
     gender: "Female",
     department: "Web Development",
     role: "UI/UX Designer",
-    email: "priyanair@example.com",
+    email: "priya@example.com",
     status: "Present"
   },
   {
@@ -26,7 +26,7 @@ var employees = [
     gender: "Male",
     department: "Cyber Security",
     role: "Security Analyst",
-    email: "karthikraj@example.com",
+    email: "karthik@example.com",
     status: "Present"
   },
   {
@@ -36,7 +36,7 @@ var employees = [
     gender: "Female",
     department: "Data Science",
     role: "Data Analyst",
-    email: "divyamani@example.com",
+    email: "divya@example.com",
     status: "Present"
   },
   {
@@ -46,7 +46,7 @@ var employees = [
     gender: "Male",
     department: "Cloud Computing",
     role: "Cloud Engineer",
-    email: "suryaprakash@example.com",
+    email: "surya@example.com",
     status: "On Permission"
   },
   {
@@ -56,7 +56,7 @@ var employees = [
     gender: "Female",
     department: "Artificial Intelligence",
     role: "ML Engineer",
-    email: "keerthivarun@example.com",
+    email: "keerthi@example.com",
     status: "Present"
   },
   {
@@ -66,7 +66,7 @@ var employees = [
     gender: "Male",
     department: "IT Support",
     role: "System Administrator",
-    email: "vigneshkumar@example.com",
+    email: "vignesh@example.com",
     status: "Present"
   },
   {
@@ -76,7 +76,7 @@ var employees = [
     gender: "Female",
     department: "Mobile App Development",
     role: "Android Developer",
-    email: "nishatamil@example.com",
+    email: "nisha@example.com",
     status: "Present"
   },
   {
@@ -86,7 +86,7 @@ var employees = [
     gender: "Male",
     department: "DevOps",
     role: "DevOps Engineer",
-    email: "haribalan@example.com",
+    email: "hari@example.com",
     status: "On Leave"
   },
   {
@@ -96,7 +96,7 @@ var employees = [
     gender: "Female",
     department: "Database Management",
     role: "Database Administrator",
-    email: "aishwaryadevi@example.com",
+    email: "aishwarya@example.com",
     status: "Present"
   }
 ];
