@@ -8,18 +8,16 @@
   </head>
   <body>
 
-    <!-- Page Header -->
     <div class="header">
-      <h1>🏥 HiLife Employee Directory</h1>
+      <h1>HiLife Employee Directory</h1>
       <p>Search and filter employees easily</p>
     </div>
 
-    <!-- Filter Section -->
     <div class="filter-box">
 
       <div class="filter-group">
         <label for="searchName">Search by Name / ID</label>
-        <input type="text" id="searchName" placeholder="e.g. John or EMP001" />
+        <input type="text" id="searchName" placeholder="e.g.  or EMP001" />
       </div>
 
       <div class="filter-group">
@@ -54,12 +52,10 @@
 
     </div>
 
-    <!-- Result Count -->
     <div class="result-info">
       Showing <span id="resultCount">0</span> employee(s)
     </div>
 
-    <!-- Table Section -->
     <div class="table-wrapper">
       <table>
         <thead>
@@ -76,11 +72,9 @@
           </tr>
         </thead>
         <tbody id="tableBody">
-          <!-- Rows will be inserted by JavaScript -->
         </tbody>
       </table>
 
-      <!-- No results message -->
       <div id="noResult" class="no-result hidden">
         😕 No employees found matching your filters.
       </div>

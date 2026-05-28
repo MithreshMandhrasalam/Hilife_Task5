@@ -1,11 +1,3 @@
-// =============================================
-//  HiLife Employee Directory - script.js
-//  Uses .map() to build table rows from data
-// =============================================
-
-
-// ---- Step 1: Employee Data Array ----
-// Each employee is an object with their details
 var employees = [
   {
     id: "EMP001",
@@ -109,40 +101,29 @@ var employees = [
   }
 ];
 
-
-// ---- Step 2: Helper - Calculate Age from DOB ----
 function calculateAge(dob) {
   var today = new Date();
   var birthDate = new Date(dob);
   var age = today.getFullYear() - birthDate.getFullYear();
-
-  // Check if birthday has passed this year
   var monthDiff = today.getMonth() - birthDate.getMonth();
   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
     age = age - 1;
   }
-
   return age;
 }
 
-
-// ---- Step 3: Build One Table Row Using .map() ----
-// .map() is used here to convert each employee object
-// into an HTML table row string
-
 function buildTableRows(employeeList) {
-
-  // .map() goes through each employee and returns a row string
-  var rowsArray = employeeList.map(function(emp) {
-
-    // Calculate age for this employee
+  var html = "";
+  for (var i = 0; i < employeeList.length; i++) {
+    var emp = employeeList[i];
     var age = calculateAge(emp.dob);
-
-    // Choose badge class based on status
-    var badgeClass = emp.status === "Active" ? "badge active" : "badge inactive";
-
-    // Return the HTML for one <tr> row
-    return "<tr>" +
+    var badgeClass = "";
+    if (emp.status === "Active") {
+      badgeClass = "badge active";
+    } else {
+      badgeClass = "badge inactive";
+    }
+    html += "<tr>" +
       "<td>" + emp.id + "</td>" +
       "<td>" + emp.name + "</td>" +
       "<td>" + emp.dob + "</td>" +
@@ -153,92 +134,76 @@ function buildTableRows(employeeList) {
       "<td>" + emp.email + "</td>" +
       "<td><span class='" + badgeClass + "'>" + emp.status + "</span></td>" +
     "</tr>";
-  });
-
-  // .join("") combines all the row strings into one big string
-  return rowsArray.join("");
+  }
+  return html;
 }
 
-
-// ---- Step 4: Show Filtered Results in Table ----
 function showTable(filteredList) {
-
   var tableBody = document.getElementById("tableBody");
   var noResult = document.getElementById("noResult");
   var resultCount = document.getElementById("resultCount");
 
-  // Update result count
   resultCount.textContent = filteredList.length;
 
-  // If no employees match, show the "no result" message
   if (filteredList.length === 0) {
     tableBody.innerHTML = "";
     noResult.classList.remove("hidden");
   } else {
-    // Build and insert rows
     tableBody.innerHTML = buildTableRows(filteredList);
     noResult.classList.add("hidden");
   }
 }
 
-
-// ---- Step 5: Filter Logic ----
 function applyFilters() {
-
-  // Get values from all filter inputs
   var searchText = document.getElementById("searchName").value.toLowerCase().trim();
   var selectedDept = document.getElementById("filterDept").value;
   var selectedDOB = document.getElementById("filterDOB").value;
   var selectedGender = document.getElementById("filterGender").value;
 
-  // Filter the employees array step by step
-  var filtered = employees.filter(function(emp) {
+  var filtered = [];
+  for (var i = 0; i < employees.length; i++) {
+    var emp = employees[i];
 
-    // Check name or ID match
-    var matchName = emp.name.toLowerCase().includes(searchText) ||
-                    emp.id.toLowerCase().includes(searchText);
+    var matchName = false;
+    if (emp.name.toLowerCase().indexOf(searchText) !== -1 || emp.id.toLowerCase().indexOf(searchText) !== -1) {
+      matchName = true;
+    }
 
-    // Check department match
-    var matchDept = selectedDept === "" || emp.department === selectedDept;
+    var matchDept = false;
+    if (selectedDept === "" || emp.department === selectedDept) {
+      matchDept = true;
+    }
 
-    // Check date of birth match
-    var matchDOB = selectedDOB === "" || emp.dob === selectedDOB;
+    var matchDOB = false;
+    if (selectedDOB === "" || emp.dob === selectedDOB) {
+      matchDOB = true;
+    }
 
-    // Check gender match
-    var matchGender = selectedGender === "" || emp.gender === selectedGender;
+    var matchGender = false;
+    if (selectedGender === "" || emp.gender === selectedGender) {
+      matchGender = true;
+    }
 
-    // Employee must match ALL filters to be shown
-    return matchName && matchDept && matchDOB && matchGender;
-  });
+    if (matchName && matchDept && matchDOB && matchGender) {
+      filtered.push(emp);
+    }
+  }
 
-  // Show the filtered results in the table
   showTable(filtered);
 }
 
-
-// ---- Step 6: Clear All Filters ----
 function clearFilters() {
   document.getElementById("searchName").value = "";
   document.getElementById("filterDept").value = "";
   document.getElementById("filterDOB").value = "";
   document.getElementById("filterGender").value = "";
-
-  // Show all employees again
   showTable(employees);
 }
 
-
-// ---- Step 7: Attach Event Listeners ----
-// Whenever any filter changes, run applyFilters()
 document.getElementById("searchName").addEventListener("input", applyFilters);
 document.getElementById("filterDept").addEventListener("change", applyFilters);
 document.getElementById("filterDOB").addEventListener("change", applyFilters);
 document.getElementById("filterGender").addEventListener("change", applyFilters);
-
-// Clear button resets everything
 document.getElementById("clearBtn").addEventListener("click", clearFilters);
 
-
-// ---- Step 8: Load Table on Page Load ----
-// Show all employees when the page first opens
 showTable(employees);
