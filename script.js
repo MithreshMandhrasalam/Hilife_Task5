@@ -163,7 +163,7 @@ function showTable(filteredList) {
 function applyFilters() {
   var searchText = document.getElementById("searchName").value.toLowerCase().trim();
   var selectedDept = document.getElementById("filterDept").value;
-  var selectedDOB = document.getElementById("filterDOB").value;
+  var selectedRole = document.getElementById("filterRole").value;
   var selectedGender = document.getElementById("filterGender").value;
   var selectedStatus = document.getElementById("filterStatus").value;
 
@@ -181,9 +181,9 @@ function applyFilters() {
       matchDept = true;
     }
 
-    var matchDOB = false;
-    if (selectedDOB === "" || emp.dob === selectedDOB) {
-      matchDOB = true;
+    var matchRole = false;
+    if (selectedRole === "" || emp.role === selectedRole) {
+      matchRole = true;
     }
 
     var matchGender = false;
@@ -196,7 +196,7 @@ function applyFilters() {
       matchStatus = true;
     }
 
-    if (matchName && matchDept && matchDOB && matchGender && matchStatus) {
+    if (matchName && matchDept && matchRole && matchGender && matchStatus) {
       filtered.push(emp);
     }
   }
@@ -207,7 +207,7 @@ function applyFilters() {
 function clearFilters() {
   document.getElementById("searchName").value = "";
   document.getElementById("filterDept").value = "";
-  document.getElementById("filterDOB").value = "";
+  document.getElementById("filterRole").value = "";
   document.getElementById("filterGender").value = "";
   document.getElementById("filterStatus").value = "";
   showTable(employees);
@@ -215,7 +215,7 @@ function clearFilters() {
 
 document.getElementById("searchName").addEventListener("input", applyFilters);
 document.getElementById("filterDept").addEventListener("change", applyFilters);
-document.getElementById("filterDOB").addEventListener("change", applyFilters);
+document.getElementById("filterRole").addEventListener("change", applyFilters);
 document.getElementById("filterGender").addEventListener("change", applyFilters);
 document.getElementById("filterStatus").addEventListener("change", applyFilters);
 document.getElementById("clearBtn").addEventListener("click", clearFilters);
