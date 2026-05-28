@@ -7,7 +7,7 @@ var employees = [
     department: "Software Development",
     role: "Frontend Developer",
     email: "arunkumar@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP102",
@@ -17,7 +17,7 @@ var employees = [
     department: "Web Development",
     role: "UI/UX Designer",
     email: "priyanair@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP103",
@@ -27,7 +27,7 @@ var employees = [
     department: "Cyber Security",
     role: "Security Analyst",
     email: "karthikraj@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP104",
@@ -37,7 +37,7 @@ var employees = [
     department: "Data Science",
     role: "Data Analyst",
     email: "divyamani@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP105",
@@ -47,7 +47,7 @@ var employees = [
     department: "Cloud Computing",
     role: "Cloud Engineer",
     email: "suryaprakash@example.com",
-    status: "Inactive"
+    status: "Absent"
   },
   {
     id: "EMP106",
@@ -57,7 +57,7 @@ var employees = [
     department: "Artificial Intelligence",
     role: "ML Engineer",
     email: "keerthivarun@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP107",
@@ -67,7 +67,7 @@ var employees = [
     department: "IT Support",
     role: "System Administrator",
     email: "vigneshkumar@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP108",
@@ -77,7 +77,7 @@ var employees = [
     department: "Mobile App Development",
     role: "Android Developer",
     email: "nishatamil@example.com",
-    status: "Active"
+    status: "Present"
   },
   {
     id: "EMP109",
@@ -97,7 +97,7 @@ var employees = [
     department: "Database Management",
     role: "Database Administrator",
     email: "aishwaryadevi@example.com",
-    status: "Active"
+    status: "Present"
   }
 ];
 
@@ -120,9 +120,9 @@ function buildTableRows(employeeList) {
     var parts = emp.dob.split("-");
     var formattedDOB = parts[2] + "-" + parts[1] + "-" + parts[0];
     var badgeClass = "";
-    if (emp.status === "Active") {
+    if (emp.status === "Present") {
       badgeClass = "badge active";
-    } else if (emp.status === "Inactive") {
+    } else if (emp.status === "Absent") {
       badgeClass = "badge inactive";
     } else if (emp.status === "On Leave") {
       badgeClass = "badge on-leave";
